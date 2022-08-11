@@ -51,7 +51,11 @@ struct HelloAndBye_stepData: StepData {
     // Add non-static members of type XMessage here for all messages.
     // Only non-static members will be collected for the overview!
     
-    public let sayingHelloAndBye = Message(id: "saying hello and bye", type: .Info, localizingMessage: [
-        .en: "saying hello and bye to $1"
-    ])
+    public let sayingHelloAndBye = Message(
+        id: "saying hello and bye",
+        type: .Info,
+        fact: [
+            .en: "saying hello and bye to $1",
+        ]
+    )
 }

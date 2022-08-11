@@ -52,11 +52,19 @@ struct ReadData_stepData: StepData {
     // Add non-static members of type XMessage here for all messages.
     // Only non-static members will be collected for the overview!
     
-    public let readingDataInfo = Message(id: "reading data", type: .Info, localizingMessage: [
-        .en: "reading data from $1"
-    ])
+    public let readingDataInfo = Message(
+        id: "reading data",
+        type: .Info,
+        fact: [
+            .en: "reading data from $1",
+        ]
+    )
     
-    public let couldNotReadData = Message(id: "could not read data", type: .Fatal, localizingMessage: [
-        .en: "could not read data from $1"
-    ])
+    public let couldNotReadData = Message(
+        id: "could not read data",
+        type: .Fatal,
+        fact: [
+            .en: "could not read data from $1",
+        ]
+    )
 }

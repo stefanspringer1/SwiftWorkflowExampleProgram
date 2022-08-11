@@ -48,7 +48,11 @@ struct Trim_stepData: StepData {
     // Add non-static members of type XMessage here for all messages.
     // Only non-static members will be collected for the overview!
     
-    public let trimming = Message(id: "trimming", type: .Info, localizingMessage: [
-        .en: "strimming \"$1\""
-    ])
+    public let trimming = Message(
+        id: "trimming",
+        type: .Info,
+        fact: [
+            .en: "strimming \"$1\"",
+        ]
+    )
 }
