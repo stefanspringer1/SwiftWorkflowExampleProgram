@@ -9,6 +9,7 @@ import WorkflowExampleData
 /**
  Wrapper if directly called for a file.
  */
+@available(macOS 10.15.0, *)
 func hello_job(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
@@ -25,6 +26,7 @@ func hello_job(
 /**
  The actual step.
  */
+@available(macOS 10.15.0, *)
 func hello_external_step(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
