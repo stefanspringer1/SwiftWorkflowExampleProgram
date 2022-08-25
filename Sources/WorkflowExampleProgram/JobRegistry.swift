@@ -16,7 +16,6 @@ public struct JobAndData {
     var stepData: StepData?
 }
 
-@available(macOS 10.15.0, *)
 var jobRegistry: [String:JobAndData] = [
     "bye": JobAndData(job: bye_job, stepData: Bye_stepData.instance),
     "hello": JobAndData(job: hello_job, stepData: nil), // the hello implementation is external

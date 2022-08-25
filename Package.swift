@@ -5,11 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftWorkflowExampleProgram",
+    platforms: [
+        .macOS(.v10_15),
+    ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.1.3"),
-        .package(url: "https://github.com/stefanspringer1/SwiftWorkflow", from: "0.0.24"),
-        .package(url: "https://github.com/stefanspringer1/SwiftWorkflowExampleLibrary", from: "0.0.23"),
+        .package(url: "https://github.com/stefanspringer1/SwiftWorkflow", from: "0.0.25"),
+        .package(url: "https://github.com/stefanspringer1/SwiftWorkflowExampleLibrary", from: "0.0.24"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

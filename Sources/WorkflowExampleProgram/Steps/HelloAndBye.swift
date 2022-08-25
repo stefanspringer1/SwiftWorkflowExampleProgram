@@ -7,7 +7,6 @@ import WorkflowExampleData
 /**
  Wrapper if directly called for a file.
  */
-@available(macOS 10.15.0, *)
 func helloAndBye_job(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
@@ -24,7 +23,6 @@ func helloAndBye_job(
 /**
  The actual step.
  */
-@available(macOS 10.15.0, *)
 func helloAndBye_step(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
