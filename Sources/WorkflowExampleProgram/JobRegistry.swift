@@ -9,7 +9,6 @@ typealias Job = (
     URL
 ) async -> ()
 
-
 /// For constructing a job registry.
 public struct JobAndData {
     var job: Job?

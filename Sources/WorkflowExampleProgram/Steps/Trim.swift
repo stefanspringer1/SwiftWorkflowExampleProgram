@@ -11,13 +11,13 @@ func trim_job(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
     file: URL
-) async {
+) {
     
     // get the data:
-    guard let data = await readData_step(during: execution, usingExecutionDatabase: executionDatabase, file: file) else { return }
+    guard let data = readData_step(during: execution, usingExecutionDatabase: executionDatabase, file: file) else { return }
     
     // start the processing of the data:
-    await trim_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
+    trim_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
 }
 
 /**
@@ -27,10 +27,10 @@ func trim_step(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
     data: MyData
-) async {
-    await execution.effectuate(executionDatabase, #function) {
+) {
+    execution.effectuate(executionDatabase, #function) {
         
-        await execution.log(stepData.trimming, data.value)
+        execution.log(stepData.trimming, data.value)
         data.value = data.value.trimmingCharacters(in: .whitespacesAndNewlines)
         
     }

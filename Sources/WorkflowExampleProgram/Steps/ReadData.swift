@@ -11,9 +11,9 @@ func readData_job(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
     file: URL
-) async {
+) {
     
-    _ = await readData_step(during: execution, usingExecutionDatabase: executionDatabase, file: file)
+    _ = readData_step(during: execution, usingExecutionDatabase: executionDatabase, file: file)
 }
 
 /**
@@ -23,14 +23,14 @@ func readData_step(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
     file: URL
-) async -> MyData? {
+) -> MyData? {
     var data: MyData? = nil
-    await execution.effectuate(executionDatabase, #function) {
+    execution.effectuate(executionDatabase, #function) {
         
-        await execution.log(stepData.readingDataInfo, file.path)
+        execution.log(stepData.readingDataInfo, file.path)
         
         guard let name = try? String(contentsOf: file, encoding: .utf8) else {
-            await execution.log(stepData.readingDataInfo, file.path)
+            execution.log(stepData.readingDataInfo, file.path)
             return
         }
         

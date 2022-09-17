@@ -14,7 +14,7 @@ func bye_job(
 ) async {
     
     // get the data:
-    guard let data = await readData_step(during: execution, usingExecutionDatabase: executionDatabase, file: file) else { return }
+    guard let data = readData_step(during: execution, usingExecutionDatabase: executionDatabase, file: file) else { return }
     
     // start the processing of the data:
     await bye_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
@@ -22,17 +22,18 @@ func bye_job(
 
 /**
  The actual step.
+ Just let's suppose that we need to make this step "async" as an example.
  */
 func bye_step(
     during execution: Execution,
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
     data: MyData
 ) async {
-    await execution.effectuate(executionDatabase, #function) {
+    execution.effectuate(executionDatabase, #function) {
         
-        await execution.log(stepData.sayingBye, data.value)
+        execution.log(stepData.sayingBye, data.value)
         
-        await trim_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
+        trim_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
         print("Bye \(data.value)!")
         
     }

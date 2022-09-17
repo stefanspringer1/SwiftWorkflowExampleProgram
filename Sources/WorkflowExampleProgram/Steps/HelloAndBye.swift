@@ -14,7 +14,7 @@ func helloAndBye_job(
 ) async {
     
     // get the data:
-    guard let data = await readData_step(during: execution, usingExecutionDatabase: executionDatabase, file: file) else { return }
+    guard let data = readData_step(during: execution, usingExecutionDatabase: executionDatabase, file: file) else { return }
     
     // start the processing of the data:
     await helloAndBye_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
@@ -28,12 +28,12 @@ func helloAndBye_step(
     usingExecutionDatabase executionDatabase: ExecutionDatabase,
     data: MyData
 ) async {
-    await execution.effectuate(executionDatabase, #function) {
+    await execution.async.effectuate(executionDatabase, #function) {
         
-        await execution.log(stepData.sayingHelloAndBye, data.value)
+        execution.log(stepData.sayingHelloAndBye, data.value)
         
-        await trim_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
-        await hello_external_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
+        trim_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
+        hello_external_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
         await bye_step(during: execution, usingExecutionDatabase: executionDatabase, data: data)
         
     }
