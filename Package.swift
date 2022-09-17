@@ -12,7 +12,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.1.3"),
         .package(url: "https://github.com/stefanspringer1/SwiftWorkflow", from: "0.0.102"),
-        .package(url: "https://github.com/stefanspringer1/SwiftWorkflowExampleLibrary", from: "0.0.26"),
+        .package(url: "https://github.com/stefanspringer1/SwiftWorkflowExampleLibrary", from: "0.0.27"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

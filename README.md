@@ -9,3 +9,5 @@ The job name can be given via `-j <job name>` with `<job name>` being replaces b
 - `hello`
 - `bye`
 - `hello-and-bye`
+
+Note that one the steps defined (`bye_step`) is an example for an asynchronous step.
